@@ -3,14 +3,25 @@ import { NgModule } from '@angular/core';
 
 import { AppComponent } from './app.component';
 
+// ╔═╗╔═╗╦═╗╦  ╦╦╔═╗╔═╗╔═╗
+// ╚═╗║╣ ╠╦╝╚╗╔╝║║  ║╣ ╚═╗
+// ╚═╝╚═╝╩╚═ ╚╝ ╩╚═╝╚═╝╚═╝
+import { AccountService } from './services/account.service';
+
+// ╔═╗┌─┐┌┬┐┌─┐┌─┐┌┐┌┌─┐┌┐┌┌┬┐┌─┐
+// ║  │ ││││├─┘│ ││││├┤ │││ │ └─┐
+// ╚═╝└─┘┴ ┴┴  └─┘┘└┘└─┘┘└┘ ┴ └─┘
+import { ViewerComponent } from './viewer/viewer.component';
+
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    ViewerComponent
   ],
   imports: [
     BrowserModule
   ],
-  providers: [],
+  providers: [AccountService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

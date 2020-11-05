@@ -1,0 +1,162 @@
+[app-component="app-viewer"] {
+
+  // ╦  ╦┌─┐┬─┐┌─┐
+  // ╚╗╔╝├─┤├┬┘└─┐
+  //  ╚╝ ┴ ┴┴└─└─┘
+  @primary: #527a9d;
+  @secondary: #6C757C;
+  @success: green;
+  @danger: red;
+
+  // ╔╦╗┌─┐┌─┐┌─┐┬ ┬┬ ┌┬┐┌─┐
+  //  ║║├┤ ├┤ ├─┤│ ││  │ └─┐
+  // ═╩╝└─┘└  ┴ ┴└─┘┴─┘┴ └─┘
+
+  display: flex;
+  flex-direction: column;
+
+  font-size: 16px;
+
+  background-color: #FFF;
+
+  // ╔╦╗╔═╗═╗ ╦╔╦╗
+  //  ║ ║╣ ╔╩╦╝ ║
+  //  ╩ ╚═╝╩ ╚═ ╩
+
+  .text-success {
+    color: @success;
+  }
+
+  .text-primary {
+    color: @primary;
+  }
+
+  .text-danger {
+    color: @danger;
+  }
+
+  .text-secondary {
+    color: @secondary;
+  }
+
+  .text-light {
+    color: @secondary;
+  }
+
+  .text-right {
+    text-align: right;
+  }
+
+  .text-center {
+    text-align: center;
+  }
+
+  .align-bottom {
+    align-self: flex-end;
+  }
+
+  // ╦ ╦┌─┐┌─┐┌┬┐┌─┐┬─┐
+  // ╠═╣├┤ ├─┤ ││├┤ ├┬┘
+  // ╩ ╩└─┘┴ ┴─┴┘└─┘┴└─
+
+  .heading {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+
+    background-color: #efefef;
+
+    box-shadow: 0 8px 6px -6px black;
+
+    .divider {
+      width: 1;
+      border-right: thin solid black;
+    }
+
+    .col {
+      width: 49%;
+      height: 75px;
+      margin: 0px;
+      padding: 10px;
+      font-size: large;
+    }
+
+    .col-active {
+      background-color: #dedede;
+    }
+
+  }
+
+  .sort-arrow {
+    color: @primary;
+    font-weight: bold;
+  }
+
+  .arrow-up {
+    margin: 0;
+    padding: 0;
+    display: inline-block;
+    transform: scale(-1, 1);
+  }
+
+  .arrow-down {
+    margin: 0;
+    padding: 0;
+    display: inline-block;
+    transform: scale(1, -1);
+  }
+
+  // ╦  ╦╔═╗╔╦╗
+  // ║  ║╚═╗ ║
+  // ╩═╝╩╚═╝ ╩
+
+  ul.account-list {
+    list-style: none;
+    font-size: large;
+    padding: 0;
+
+    li {
+      display: flex;
+
+      padding: 10px;
+      justify-content: space-between;
+
+      border-bottom: thin silver solid;
+
+      font-size: large;
+
+      .col {
+        width: 50%;
+        align-self: center;
+      }
+
+      .col-account {
+        font-weight: bold;
+        font-size: 120%
+      }
+
+      .col-cash {
+        text-align: right;
+
+        .todays-change {
+          font-size: medium;
+        }
+      }
+
+    }
+
+    li.loader {
+      color: @primary;
+      justify-content: center;
+
+      cursor: pointer;
+
+      font-size: large;
+      font-weight: bold;
+
+      border-bottom: white;
+    }
+
+  }
+
+}

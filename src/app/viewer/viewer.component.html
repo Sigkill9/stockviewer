@@ -1,0 +1,39 @@
+<div app-component="app-viewer">
+  <div class="heading">
+    <div class="col align-bottom" [ngClass]="{'col-active':sortKey === 'account'}" (click)="sort('account')">
+      Account
+      <span *ngIf="sortKey === 'account'">
+        <div class="sort-arrow" [ngClass]="{'arrow-up': sortDir, 'arrow-down': !sortDir}">^</div>
+      </span>
+    </div>
+    <div class="col text-right" [ngClass]="{'col-active':sortKey === 'availableCash'}" (click)="sort('availableCash')">
+      <div>
+        <span *ngIf="sortKey === 'availableCash'">
+          <div class="sort-arrow" [ngClass]="{'arrow-up': sortDir, 'arrow-down': !sortDir}">^</div>
+        </span>
+        Available Cash
+      </div>
+      <div class="text-secondary">Today's Change</div>
+    </div>
+  </div>
+  <div>
+    <ul class="account-list">
+      <li *ngFor="let account of accounts">
+        <div class="col col-account text-primary">
+          {{ account.account.toUpperCase() }}
+        </div>
+        <div class="col col-cash">
+          <div class="available-cash">
+            {{ account.availableCash | currency }}
+          </div>
+          <div class="todays-change" [ngClass]="{ 'text-success': (account.cngPerc > 0), 'text-danger': (account.cngPerc < 0), 'text-secondary': (account.cngPerc == 0)  }">
+            {{ account.cngPerc }} / {{ account.cngAmt }}
+          </div>
+        </div>
+      </li>
+      <li *ngIf="showLoader" (click)="loadAll()" class="loader">
+        Load More
+      </li>
+    </ul>
+  </div>
+</div>
